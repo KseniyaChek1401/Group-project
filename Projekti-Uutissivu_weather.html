@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projekti-KKKM</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+<script>
+  !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  </script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+body{
+  background: rgb(33,139,207);
+background: radial-gradient(circle, rgba(33,139,207,1) 0%, rgba(222,228,237,1) 100%);
+
+}
+
+ul{
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: space-between;
+  text-align: center;
+}
+li {
+  padding: 1rem 2rem 1.15rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #ebebeb;
+  min-width: 80px;
+  margin: auto;
+  font-size: 40px;
+}
+
+li:hover {
+  background-size: 100% 100%;
+  color: #27262c;
+  animation: spring 100ms ease-out;
+  text-shadow: 0 -1px 0 #030303;
+  font-weight: bold;
+}
+li:active {
+  transform: translateY(4px);
+}
+
+@keyframes spring {
+  15% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.2, 1.1);
+  }
+  40% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(0.95, 0.95);
+  }
+  75% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1.05, 1);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: scale(1, 1);
+  }
+}
+
+.shameless-plug{
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  padding: 8px 20px;
+  color: #ccc;
+  text-decoration: none;
+}
+h1 {
+  text-decoration: underline;
+  text-align: center;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 120px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Garamond', serif;
+}
+.container {
+  border-top: 3px solid #000000;
+  overflow-x: hidden;
+}
+
+.etusivu {
+  margin: 0 -17px 0 -16px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.etusivu-cell {
+  padding: 16px;
+  background-color: #fff;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.etusivu-cell--1 {
+  grid-row: 1 / span 2;
+}
+
+.etusivu-cell--2 {
+  grid-column: 2 / span 2;
+}
+
+.etusivu-cell--3 {
+  grid-column: 2 / span 2;
+}
+
+.etusivu-item {
+  background-color: #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  height: 100%;
+}
+
+.twitter-timeline {
+    height: 900px !important;
+    width: 700px !important;
+}
+
+.start {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(251, 242, 133);
+    background: radial-gradient(
+      circle,
+      rgba(251, 242, 133, 0.6334908963585435) 0%,
+      rgba(224, 196, 91, 0.8407738095238095) 35%,
+      rgba(230, 224, 113, 1) 100%
+    );
+  }
+  
+  .weather {
+    display: flex; 
+    align-items: center;
+    margin: 15px 0;
+    font-size: 1.5rem;
+  }
+
+  #location {
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+  }
+  .desc {
+    font-size: 1.25rem;
+    text-transform: capitalize;
+  }
+
+
+
+</style>
+
+</head>
+<body>
+
+<h1>Tiedotteita Turusta</h1>
+       
+  <ul>
+  <li>Etusivu</li>
+  <li>Tyhjä</li>
+  <li>Tyhjä</li>
+</ul>
+<div class="start">
+    <img src="" alt="" srcset="" id="weather-icon">
+        <div id="location"></div>
+        <div class="desc"></div>
+        <div class="weather">
+            <div class="c"></div>
+             <div class="f"></div>
+        </div>
+        <script src="scripts.js"></script>
+        <div class="info">
+            <h4><span class="sunrise"></span></h4>
+            <h4><span class="sunset"></span></h4> 
+<div class="container">
+    <div class="etusivu">
+      <div class="etusivu-cell etusivu-cell--1">
+          <div class="etusivu-item"><a class="twitter-timeline" data-widget-id="600720083413962752" href="https://twitter.com/Turkukaupunki">Turun twitter feedi</a>
+            </div>
+      </div>
+      <div class="etusivu-cell etusivu-cell--2">
+        
+          <div class="etusivu-item">2</div>
+      </div>
+      <div class="etusivu-cell etusivu-cell--3">
+          <div class="etusivu-item">3</div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+</html>
