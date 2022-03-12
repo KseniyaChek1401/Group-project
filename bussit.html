@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+</head>
+<body>
+
+
+<input type="button" onClick="esitaBussisatama()" value="Bussi 1 satamasta keskustaan/ lentoasemalle"> <br>
+<textarea id="demo" rows=30 cols=60> </textarea> <br>
+
+<input type="button" onClick="esitaBussiLinnank13()" value="Bussi 1 Linnankatu 13 satamaan "> <br>
+<textarea id="demo2" rows=30 cols=60> </textarea> <br>
+
+<input type="button" onClick="esitaBussiLinnankT86()" value="Bussi 1 Linnankatu 12 lentoasemalle "> <br>
+<textarea id="demo3" rows=30 cols=60> </textarea> <br>
+
+<input type="button" onClick="esitaBussiLentoas()" value="Bussi 1 Lentoasemalta keskustaan/ satamaan "> <br>
+<textarea id="demo4" rows=30 cols=60> </textarea> <br>
+
+<script>
+
+function esitaBussisatama()
+
+{
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+  
+  document.getElementById("demo").value = "";
+  var jsonObjekti = JSON.parse(this.responseText);
+
+	let koko = jsonObjekti.result.length;
+	let k = 0;  
+	document.getElementById("demo").value = "";
+	
+	while(k < koko)
+	{
+		if (jsonObjekti.result[k].lineref == "1")
+		{
+			document.getElementById("demo").value +=  jsonObjekti.result[k].lineref + ": " + jsonObjekti.result[k].expectedarrivaltime + "\n";	
+		}
+		
+		
+		k++;
+	}
+  }
+};
+xmlhttp.open("GET", "http://data.foli.fi/siri/stops/79/format", true);
+xmlhttp.send();
+}
+
+function esitaBussiLinnank13()
+{
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+  
+  document.getElementById("demo2").value = "";
+  var jsonObjekti = JSON.parse(this.responseText);
+
+	let koko = jsonObjekti.result.length;
+	let k = 0;  
+	document.getElementById("demo2").value = "";
+	
+	while(k < koko)
+	{
+		if (jsonObjekti.result[k].lineref == "1")
+		{
+			document.getElementById("demo2").value +=  jsonObjekti.result[k].lineref + ": " + jsonObjekti.result[k].expectedarrivaltime + "\n";	
+		}
+		
+		
+		k++;
+	}
+  }
+};
+xmlhttp.open("GET", "http://data.foli.fi/siri/stops/T89/format", true);
+xmlhttp.send();
+}
+
+function esitaBussiLinnankT86()
+{
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+  
+  document.getElementById("demo3").value = "";
+  var jsonObjekti = JSON.parse(this.responseText);
+
+	let koko = jsonObjekti.result.length;
+	let k = 0;  
+	document.getElementById("demo3").value = "";
+	
+	while(k < koko)
+	{
+		if (jsonObjekti.result[k].lineref == "1")
+		{
+			document.getElementById("demo3").value +=  jsonObjekti.result[k].lineref + ": " + jsonObjekti.result[k].expectedarrivaltime + "\n";	
+		}
+		
+		
+		k++;
+	}
+  }
+};
+xmlhttp.open("GET", "http://data.foli.fi/siri/stops/T86/format", true);
+xmlhttp.send();
+}
+
+function esitaBussiLentoas()
+{
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+  
+  document.getElementById("demo4").value = "";
+  var jsonObjekti = JSON.parse(this.responseText);
+
+	let koko = jsonObjekti.result.length;
+	let k = 0;  
+	document.getElementById("demo4").value = "";
+	
+	while(k < koko)
+	{
+		if (jsonObjekti.result[k].lineref == "1")
+		{
+			document.getElementById("demo4").value +=  jsonObjekti.result[k].lineref + ": " + jsonObjekti.result[k].expectedarrivaltime + "\n";	
+		}
+		
+		
+		k++;
+	}
+  }
+};
+xmlhttp.open("GET", "http://data.foli.fi/siri/stops/1586/format", true);
+xmlhttp.send();
+}
+
+</script>
+
+</body>
+</html> 
